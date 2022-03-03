@@ -2,7 +2,7 @@
 const modal = document.querySelector(".modal");
 const closeModalButton = document.querySelector(".close-modal-btn");
 
-// Variables
+// Queries
 const startGameBtn = document.querySelector(".start-btn");
 const endGameBtn = document.querySelector(".end-btn");
 const circles = document.querySelectorAll(".circle");
@@ -10,6 +10,7 @@ const scoreText = document.querySelector(".score");
 const resultText = document.querySelector(".result");
 const message = document.querySelector(".message");
 
+// Variables
 let active = 0;
 let pace = 1000;
 let score = 0;
@@ -17,10 +18,6 @@ let timer;
 let rounds = 0;
 
 // Definds Function
-// Get Random Number Function
-const getRandomNumber = () => {
-  return Math.floor(Math.random() * 4);
-};
 
 circles.forEach((circle, index) => {
   circle.addEventListener("click", () => clickedCircles(index));
@@ -32,7 +29,7 @@ const clickedCircles = (index) => {
   } else {
     score++;
     rounds--;
-    scoreText.textContent = score;
+    scoreText.textContent = `Your score: ${score}`;
   }
 };
 
@@ -45,13 +42,18 @@ const startGame = () => {
     circles[i].style.pointerEvents = "auto";
   }
 
-  const pickNew = (active) => {
-    let nextActive = getRandomNumber();
-    return nextActive != active ? nextActive : pickNew(active);
+  // Generate Random Number
+  const getRandomNumber = () => {
+    return Math.floor(Math.random() * 4);
   };
 
-  nextActive = pickNew(active);
-  circles[nextActive].classList.toggle("active");
+  const pickNewActive = () => {
+    let nextActive = getRandomNumber();
+    return nextActive != active ? nextActive : getRandomNumber();
+  };
+  nextActive = pickNewActive();
+
+  circles[nextActive].classList.add("active");
   circles[active].classList.remove("active");
   active = nextActive;
   timer = setTimeout(startGame, pace);
@@ -62,7 +64,7 @@ const startGame = () => {
   }
 };
 
-// Stop game function
+// End game function
 const endGame = () => {
   clearTimeout(timer);
   modal.style.visibility = "visible";

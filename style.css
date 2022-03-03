@@ -30,7 +30,7 @@ body {
 }
 
 h1 {
-  font-size: clamp(3rem, 3vw, 5rem);
+  font-size: clamp(3rem, 4vw, 5rem);
   /* text-transform: uppercase; */
   letter-spacing: 5px;
 }
@@ -55,7 +55,7 @@ h1 {
 .button {
   font-family: inherit;
   font-size: inherit;
-  padding: 1rem 2.5rem;
+  padding: 1.5rem 2.5rem;
   border: none;
   cursor: pointer;
   border-radius: 1rem;
@@ -82,10 +82,11 @@ h1 {
   margin: auto;
   padding: 20px;
   border: 1px solid #888;
-  width: 80%;
+  width: 50%;
   height: 30%;
   border-radius: 1rem;
   position: relative;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.4);
 }
 
 .close-modal-btn {
@@ -114,6 +115,6 @@ h1 {
 }
 
 /* hide stop game button by default*/
-.stop-btn {
+.end-btn {
   display: none;
 }
