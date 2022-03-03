@@ -8,21 +8,27 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>Speedgame</h1>
-    <p class="score">Your score: 0</p>
+    <div>
+      <h1>Speedgame</h1>
+      <p class="score">Your score: 0</p>
+    </div>
     <div class="circles">
       <div class="circle"></div>
       <div class="circle"></div>
       <div class="circle"></div>
     </div>
     <div class="buttons">
-      <button class="button stop-btn">Stop game</button>
       <button class="button start-btn">Start game</button>
+      <button class="button stop-btn">Stop game</button>
     </div>
 
     <!-- The Modal  -->
     <div class="modal">
-      <div class="modal-content"></div>
+      <div class="modal-content">
+        <button class="close-modal-btn">X close</button>
+        <p class="result">Your final score is 0</p>
+        <p class="message">You have done a great job</p>
+      </div>
     </div>
 
     <script src="main.js"></script>
