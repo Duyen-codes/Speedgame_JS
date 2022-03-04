@@ -18,7 +18,6 @@ let timer;
 let rounds = 0;
 
 // Definds Function
-
 circles.forEach((circle, index) => {
   circle.addEventListener("click", () => clickedCircles(index));
 });
