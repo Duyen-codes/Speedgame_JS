@@ -64,6 +64,7 @@ const startGame = () => {
 
   let audio = new Audio("pen-clicking.mp3");
   audio.play();
+  soundTrack.volume = 0.0;
 };
 
 // End game function
@@ -88,3 +89,9 @@ const reloadGame = () => {
 startGameBtn.addEventListener("click", startGame);
 endGameBtn.addEventListener("click", endGame);
 closeModalButton.addEventListener("click", reloadGame);
+
+let soundTrack = document.querySelector(".sound-track");
+window.onload = function () {
+  soundTrack.play();
+  soundTrack.volume = 0.5;
+};
