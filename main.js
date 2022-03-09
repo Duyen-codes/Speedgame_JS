@@ -57,10 +57,13 @@ const startGame = () => {
   active = nextActive;
   timer = setTimeout(startGame, pace);
   pace = pace - 10;
-
-  if (rounds >= 1) {
+  rounds++;
+  if (rounds >= 5) {
     endGame();
   }
+
+  let audio = new Audio("pen-clicking.mp3");
+  audio.play();
 };
 
 // End game function
@@ -68,7 +71,7 @@ const endGame = () => {
   clearTimeout(timer);
   modal.style.visibility = "visible";
   resultText.textContent = `Your final score was ${score}`;
-  if (score > 0 && score <= 2) {
+  if (score >= 0 && score <= 2) {
     message.textContent = `very bad score`;
   } else if (score > 2 && score < 4) {
     message.textContent = "Ok score";

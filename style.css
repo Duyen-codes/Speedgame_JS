@@ -42,14 +42,14 @@ h1 {
 
 .circle {
   border: 1px solid black;
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  pointer-events: none; /* circles are not clickable*/
+  pointer-events: none; /* circles not clickable*/
 }
 
 .button {
@@ -108,10 +108,10 @@ h1 {
   margin-block: 3rem;
 }
 
-/* hide stop button at first */
-
 .circle.active {
-  background: pink;
+  background: url("frog-img.png") no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 /* hide stop game button by default*/
